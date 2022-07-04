@@ -33,7 +33,7 @@ const DropFileInput = (props) => {
   return (
     <>
       <h2 className={styles.Ready_text} style={{ display: checkFiles }}>
-        "Ready Done"
+      &quot;Ready Done&ldquo; 
       </h2>
       <div className={styles.wrapper}>
         <div
@@ -50,7 +50,7 @@ const DropFileInput = (props) => {
           <input type="file" value="" onChange={onFileDrop} />
         </div>
         {fileList.length > 0 ? (
-          <div>
+          <div style={{ display: "none" }}>
             <p>Ready to upload</p>
             {fileList.map((item, index) => {
               console.log(
@@ -59,7 +59,7 @@ const DropFileInput = (props) => {
                 ImageConfig["pdf"]
               );
               return (
-                <div key={index} style={{ display: "none" }}>
+                <div key={index} >
                   <img
                     src={
                       ImageConfig[item.type.split("/")[1]] ||
